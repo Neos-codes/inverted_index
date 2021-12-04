@@ -32,4 +32,4 @@
 *.app
 
 # Data
-english.100MB
+data/english.100MB

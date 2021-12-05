@@ -27,5 +27,5 @@
 
 ### PD:
 
-Debes modificar el archivo main.cpp y en el constructor del inv_index que utiliza int_vector cambiar la ruta por la del archivo que deseas añadir a la estructura.
+Debes modificar el archivo main.cpp cambiando el constructor del inv_index que utiliza int_vector cambiar la ruta por la del archivo que deseas añadir a la estructura.
 

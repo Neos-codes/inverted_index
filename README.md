@@ -9,7 +9,7 @@
 
 - Clonar repositorio
 
-> git clone https://github.com/simongog/sdsl-lite.git
+> git clone https://github.com/Neos-codes/inverted_index.git
 
 - Entrar al directorio de sdsl-lite e insertar el siguiente comando por consola
 

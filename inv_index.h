@@ -7,8 +7,6 @@
 #include <vector>
 #include <fstream>
 #include <sstream>
-#include <ctype.h>
-#include <dirent.h>
 #include <sdsl/vectors.hpp>  // int_vector    enc_vector
 
 
@@ -148,7 +146,47 @@ private:
     
   }// END INSERT_DOC
 
+  std::vector<int> merge(std::string key1, std::string key2){
+    // Iteradores
+    int i = 0;
+    int j = 0;
 
+    std::vector<int> merge;
+
+    // Si alguna de las palabras no está, se retorna vector vacio
+    if(data[key1] -> size() == 0 || data[key2] -> size() == 0)
+      return merge;
+
+    // Buscamos en ambas listas
+    while(true){
+
+      int data_1 = (*data[key1])[i];
+      int data_2 = (*data[key2])[j];
+
+      // Si coinciden, se pushea uno y avanzan ambos
+      if(data_1 == data_2){
+	merge.push_back(data_1);
+	i++;
+	j++;
+      }
+      // Si no coinciden, si data_1 es menor, aumenta i
+      else if(data_1 < data_2){
+	i++;
+      }
+      // Si no, aumenta j
+      else{
+	j++;
+      }
+
+      // Verificar si termina de recorrer alguna de las listas
+      if(i >= data[key1] -> size() || j >= data[key2] -> size())
+	return merge;
+    }
+
+  }
+      
+
+  
   void bit_compress(){
     for(auto e: data){
       sdsl::util::bit_compress(*e.second);
@@ -193,7 +231,7 @@ private:
   
   // --- Operadores --- //
   R &operator[](T key){
-    return (*data)[key];
+    return data[key];
   } 
 
 };

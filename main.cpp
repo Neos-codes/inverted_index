@@ -40,7 +40,7 @@ int main(){
   
   start = clock();
   for(int i = 0; i < 100; i++){
-    docs = index_int.merge("youth", "yourself");
+    docs = index_int.merge("my", "name");
   }
   end = clock();
 

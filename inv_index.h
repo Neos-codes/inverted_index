@@ -153,6 +153,12 @@ private:
 
     std::vector<int> merge;
 
+    R *vec_1 = data[key1];
+    R *vec_2 = data[key2];
+
+    //std::cout << "Size of vec_1: " << vec_1.size() << std::endl;
+    //std::cout << "Size of vec_2: " << vec_2.size() << std::endl;
+    
     // Si alguna de las palabras no está, se retorna vector vacio
     if(data[key1] -> size() == 0 || data[key2] -> size() == 0)
       return merge;
@@ -160,8 +166,10 @@ private:
     // Buscamos en ambas listas
     while(true){
 
-      int data_1 = (*data[key1])[i];
-      int data_2 = (*data[key2])[j];
+      int data_1 = (*vec_1)[i];
+      int data_2 = (*vec_2)[j];
+
+      //std::cout << "i: " << i << " j: " << j << std::endl;
 
       // Si coinciden, se pushea uno y avanzan ambos
       if(data_1 == data_2){
@@ -179,7 +187,7 @@ private:
       }
 
       // Verificar si termina de recorrer alguna de las listas
-      if(i >= data[key1] -> size() || j >= data[key2] -> size())
+      if(i >= vec_1 -> size() || j >= vec_2 -> size())
 	return merge;
     }
 

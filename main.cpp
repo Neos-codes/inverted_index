@@ -26,18 +26,21 @@ int main(){
   vector<int> docs;
   
 
-
+  /*
   cout << "Espacio utilizado (MBytes)\n\nPara int_vec:\n";
   cout << "Sin comprimir: " << index_int.size() << endl;
-  index_int.bit_compress();
   cout << "Comprimido: " << index_int.size() << endl;
 
   cout << "Para enc_vector con elias gamma:\n" << index_enc_gamma.size() << endl;
   cout << "Para enc_vector con elias delta:\n" << index_enc_delta.size() << endl;
 
+  */
+
+  index_int.bit_compress();
+  
   start = clock();
   for(int i = 0; i < 100; i++){
-    docs = index_int.merge("my", "name");
+    docs = index_int.merge("youth", "yourself");
   }
   end = clock();
 
